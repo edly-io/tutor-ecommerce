@@ -10,8 +10,8 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 ###### Checkout code
 FROM minimal as checkout
 
-ARG ECOMMERCE_REPOSITORY=https://github.com/edx/ecommerce.git
-ARG ECOMMERCE_VERSION='{{ OPENEDX_COMMON_VERSION }}'
+ARG ECOMMERCE_REPOSITORY=https://github.com/edly-io/ecommerce.git
+ARG ECOMMERCE_VERSION=test_payment_mfe_4
 RUN mkdir -p /openedx/ecommerce && \
     git clone $ECOMMERCE_REPOSITORY --branch $ECOMMERCE_VERSION --depth 1 /openedx/ecommerce
 
